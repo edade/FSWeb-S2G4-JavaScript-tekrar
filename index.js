@@ -124,7 +124,7 @@ ucebolunenlerintoplami = ucetambolunenler.reduce(
   (total, sayi) => (total += sayi),
   0
 );
-console.log(ucebolunenlerintoplami);
+//console.log(ucebolunenlerintoplami);
 
 //3d çözümü
 besyuzdenkucuksayilar = [];
@@ -133,10 +133,16 @@ sayilar.filter((sayi) => {
     besyuzdenkucuksayilar.push(sayi);
   }
 });
-
+console.log(besyuzdenkucuksayilar);
 //3e çözümü
-
-/* kodlar buraya */
+siralisayilar = [];
+for (let i = 0; i < besyuzdenkucuksayilar.length; i++) {
+  siralisayilar.push(besyuzdenkucuksayilar[i]);
+}
+siralisayilar.sort(function (a, b) {
+  return a - b;
+});
+console.log(siralisayilar);
 
 //3f çözümü
 
