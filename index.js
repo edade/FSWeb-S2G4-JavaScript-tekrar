@@ -96,8 +96,8 @@ var ucetambolunenler,
   tekraredensayilar;
 
 //3a çözümü
-enbuyuk = 0;
-enkucuk = 1000;
+enbuyuk = sayilar[0];
+enkucuk = sayilar[0];
 for (let i = 0; i < sayilar.length; i++) {
   if (enbuyuk < sayilar[i]) {
     enbuyuk = sayilar[i];
@@ -120,10 +120,15 @@ sayilar.forEach((sayi) => {
 
 //3c çözümü:
 
-ucebolunenlerintoplami = ucetambolunenler.reduce(
+/*ucebolunenlerintoplami = ucetambolunenler.reduce(
   (total, sayi) => (total += sayi),
   0
-);
+);*/
+
+ucebolunenlerintoplami = ucetambolunenler.reduce((total, sayi) => {
+  total += sayi;
+  return total;
+}, 0);
 //console.log(ucebolunenlerintoplami);
 
 //3d çözümü
@@ -133,7 +138,8 @@ sayilar.filter((sayi) => {
     besyuzdenkucuksayilar.push(sayi);
   }
 });
-console.log(besyuzdenkucuksayilar);
+//console.log(besyuzdenkucuksayilar);
+
 //3e çözümü
 siralisayilar = [];
 for (let i = 0; i < besyuzdenkucuksayilar.length; i++) {
@@ -145,8 +151,23 @@ siralisayilar.sort(function (a, b) {
 console.log(siralisayilar);
 
 //3f çözümü
-
-/* kodlar buraya */
+tekraredensayilar = [];
+let count = {};
+sayilar.forEach((item) => {
+  if (count[item]) {
+    count[item] += 1;
+  } else {
+    count[item] = 1;
+  }
+});
+for (let key in count) {
+  if (count[key] >= 2) {
+    tekraredensayilar.push(
+      `${key} sayısı ${count[key]} kere tekrar edilmiştir`
+    );
+  }
+}
+console.log(tekraredensayilar);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa() {
