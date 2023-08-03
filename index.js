@@ -69,7 +69,7 @@ function CemberinCevresi(r) {
 function CemberinAlani(r, pi) {
   return pi * Math.pow(r, 2);
 }
-console.log(CemberinAlani(15, pi));
+//console.log(CemberinAlani(15, pi));
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -96,20 +96,43 @@ var ucetambolunenler,
   tekraredensayilar;
 
 //3a çözümü
-
-/* kodlar buraya */
+enbuyuk = 0;
+enkucuk = 1000;
+for (let i = 0; i < sayilar.length; i++) {
+  if (enbuyuk < sayilar[i]) {
+    enbuyuk = sayilar[i];
+  }
+  if (enkucuk > sayilar[i]) {
+    enkucuk = sayilar[i];
+  }
+}
+//console.log(enbuyuk);
+//console.log(enkucuk);
 
 // 3b çözümü:
-
-/* kodlar buraya */
+ucetambolunenler = [];
+sayilar.forEach((sayi) => {
+  if (sayi % 3 == 0) {
+    ucetambolunenler.push(sayi);
+  }
+});
+//console.log(ucetambolunenler);
 
 //3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce(
+  (total, sayi) => (total += sayi),
+  0
+);
+console.log(ucebolunenlerintoplami);
 
 //3d çözümü
-
-/* kodlar buraya */
+besyuzdenkucuksayilar = [];
+sayilar.filter((sayi) => {
+  if (sayi < 500) {
+    besyuzdenkucuksayilar.push(sayi);
+  }
+});
 
 //3e çözümü
 
